@@ -14,7 +14,6 @@ from data_tools import read_split_data
 os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 
 
-# 此文件注释可参考 train_resnet.py
 
 
 def main(args):
@@ -94,7 +93,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch-size', type=int, default=16)
 
     parser.add_argument('--data-path', type=str,
-                        default="../brain_dataset_24b")  ###################验证集单独路径，和元数据集格式相同！
+                        default="../brain_dataset_24b") 
 
     parser.add_argument('--weights', type=str, default='./resnet50.pth',
                         help='initial weights path')
