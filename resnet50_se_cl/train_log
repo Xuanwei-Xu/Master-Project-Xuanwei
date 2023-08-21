@@ -1,0 +1,311 @@
+ 023/brain-tumor-project/data2/resnet50_se_cl_3/train_resnet50.py
+Namespace(batch_size=16, data_path='../brain_dataset_24b', device='cuda:0', epochs=100, lr=0.001, lrf=0.1, num_classes=4, weights='../se-pycontrast/save/MoCov2_resnet50_RGB_Jig_False_moco_aug_B_mlp_0.2_cosine/last_model.pth')
+Start Tensorboard with "tensorboard --logdir=runs", view at http://localhost:6006/
+3160 images were found in the dataset.
+2529 images for training.
+631 images for validation.
+Using 16 dataloader workers every process
+dict_keys(['conv1.weight', 'bn1.weight', 'bn1.bias', 'bn1.running_mean', 'bn1.running_var', 'bn1.num_batches_tracked', 'layer1.0.conv1.weight', 'layer1.0.bn1.weight', 'layer1.0.bn1.bias', 'layer1.0.bn1.running_mean', 'layer1.0.bn1.running_var', 'layer1.0.bn1.num_batches_tracked', 'layer1.0.conv2.weight', 'layer1.0.bn2.weight', 'layer1.0.bn2.bias', 'layer1.0.bn2.running_mean', 'layer1.0.bn2.running_var', 'layer1.0.bn2.num_batches_tracked', 'layer1.0.conv3.weight', 'layer1.0.bn3.weight', 'layer1.0.bn3.bias', 'layer1.0.bn3.running_mean', 'layer1.0.bn3.running_var', 'layer1.0.bn3.num_batches_tracked', 'layer1.0.downsample.0.weight', 'layer1.0.downsample.1.weight', 'layer1.0.downsample.1.bias', 'layer1.0.downsample.1.running_mean', 'layer1.0.downsample.1.running_var', 'layer1.0.downsample.1.num_batches_tracked', 'layer1.1.conv1.weight', 'layer1.1.bn1.weight', 'layer1.1.bn1.bias', 'layer1.1.bn1.running_mean', 'layer1.1.bn1.running_var', 'layer1.1.bn1.num_batches_tracked', 'layer1.1.conv2.weight', 'layer1.1.bn2.weight', 'layer1.1.bn2.bias', 'layer1.1.bn2.running_mean', 'layer1.1.bn2.running_var', 'layer1.1.bn2.num_batches_tracked', 'layer1.1.conv3.weight', 'layer1.1.bn3.weight', 'layer1.1.bn3.bias', 'layer1.1.bn3.running_mean', 'layer1.1.bn3.running_var', 'layer1.1.bn3.num_batches_tracked', 'layer1.2.conv1.weight', 'layer1.2.bn1.weight', 'layer1.2.bn1.bias', 'layer1.2.bn1.running_mean', 'layer1.2.bn1.running_var', 'layer1.2.bn1.num_batches_tracked', 'layer1.2.conv2.weight', 'layer1.2.bn2.weight', 'layer1.2.bn2.bias', 'layer1.2.bn2.running_mean', 'layer1.2.bn2.running_var', 'layer1.2.bn2.num_batches_tracked', 'layer1.2.conv3.weight', 'layer1.2.bn3.weight', 'layer1.2.bn3.bias', 'layer1.2.bn3.running_mean', 'layer1.2.bn3.running_var', 'layer1.2.bn3.num_batches_tracked', 'layer2.0.conv1.weight', 'layer2.0.bn1.weight', 'layer2.0.bn1.bias', 'layer2.0.bn1.running_mean', 'layer2.0.bn1.running_var', 'layer2.0.bn1.num_batches_tracked', 'layer2.0.conv2.weight', 'layer2.0.bn2.weight', 'layer2.0.bn2.bias', 'layer2.0.bn2.running_mean', 'layer2.0.bn2.running_var', 'layer2.0.bn2.num_batches_tracked', 'layer2.0.conv3.weight', 'layer2.0.bn3.weight', 'layer2.0.bn3.bias', 'layer2.0.bn3.running_mean', 'layer2.0.bn3.running_var', 'layer2.0.bn3.num_batches_tracked', 'layer2.0.downsample.0.weight', 'layer2.0.downsample.1.weight', 'layer2.0.downsample.1.bias', 'layer2.0.downsample.1.running_mean', 'layer2.0.downsample.1.running_var', 'layer2.0.downsample.1.num_batches_tracked', 'layer2.1.conv1.weight', 'layer2.1.bn1.weight', 'layer2.1.bn1.bias', 'layer2.1.bn1.running_mean', 'layer2.1.bn1.running_var', 'layer2.1.bn1.num_batches_tracked', 'layer2.1.conv2.weight', 'layer2.1.bn2.weight', 'layer2.1.bn2.bias', 'layer2.1.bn2.running_mean', 'layer2.1.bn2.running_var', 'layer2.1.bn2.num_batches_tracked', 'layer2.1.conv3.weight', 'layer2.1.bn3.weight', 'layer2.1.bn3.bias', 'layer2.1.bn3.running_mean', 'layer2.1.bn3.running_var', 'layer2.1.bn3.num_batches_tracked', 'layer2.2.conv1.weight', 'layer2.2.bn1.weight', 'layer2.2.bn1.bias', 'layer2.2.bn1.running_mean', 'layer2.2.bn1.running_var', 'layer2.2.bn1.num_batches_tracked', 'layer2.2.conv2.weight', 'layer2.2.bn2.weight', 'layer2.2.bn2.bias', 'layer2.2.bn2.running_mean', 'layer2.2.bn2.running_var', 'layer2.2.bn2.num_batches_tracked', 'layer2.2.conv3.weight', 'layer2.2.bn3.weight', 'layer2.2.bn3.bias', 'layer2.2.bn3.running_mean', 'layer2.2.bn3.running_var', 'layer2.2.bn3.num_batches_tracked', 'layer2.3.conv1.weight', 'layer2.3.bn1.weight', 'layer2.3.bn1.bias', 'layer2.3.bn1.running_mean', 'layer2.3.bn1.running_var', 'layer2.3.bn1.num_batches_tracked', 'layer2.3.conv2.weight', 'layer2.3.bn2.weight', 'layer2.3.bn2.bias', 'layer2.3.bn2.running_mean', 'layer2.3.bn2.running_var', 'layer2.3.bn2.num_batches_tracked', 'layer2.3.conv3.weight', 'layer2.3.bn3.weight', 'layer2.3.bn3.bias', 'layer2.3.bn3.running_mean', 'layer2.3.bn3.running_var', 'layer2.3.bn3.num_batches_tracked', 'layer3.0.conv1.weight', 'layer3.0.bn1.weight', 'layer3.0.bn1.bias', 'layer3.0.bn1.running_mean', 'layer3.0.bn1.running_var', 'layer3.0.bn1.num_batches_tracked', 'layer3.0.conv2.weight', 'layer3.0.bn2.weight', 'layer3.0.bn2.bias', 'layer3.0.bn2.running_mean', 'layer3.0.bn2.running_var', 'layer3.0.bn2.num_batches_tracked', 'layer3.0.conv3.weight', 'layer3.0.bn3.weight', 'layer3.0.bn3.bias', 'layer3.0.bn3.running_mean', 'layer3.0.bn3.running_var', 'layer3.0.bn3.num_batches_tracked', 'layer3.0.downsample.0.weight', 'layer3.0.downsample.1.weight', 'layer3.0.downsample.1.bias', 'layer3.0.downsample.1.running_mean', 'layer3.0.downsample.1.running_var', 'layer3.0.downsample.1.num_batches_tracked', 'layer3.1.conv1.weight', 'layer3.1.bn1.weight', 'layer3.1.bn1.bias', 'layer3.1.bn1.running_mean', 'layer3.1.bn1.running_var', 'layer3.1.bn1.num_batches_tracked', 'layer3.1.conv2.weight', 'layer3.1.bn2.weight', 'layer3.1.bn2.bias', 'layer3.1.bn2.running_mean', 'layer3.1.bn2.running_var', 'layer3.1.bn2.num_batches_tracked', 'layer3.1.conv3.weight', 'layer3.1.bn3.weight', 'layer3.1.bn3.bias', 'layer3.1.bn3.running_mean', 'layer3.1.bn3.running_var', 'layer3.1.bn3.num_batches_tracked', 'layer3.2.conv1.weight', 'layer3.2.bn1.weight', 'layer3.2.bn1.bias', 'layer3.2.bn1.running_mean', 'layer3.2.bn1.running_var', 'layer3.2.bn1.num_batches_tracked', 'layer3.2.conv2.weight', 'layer3.2.bn2.weight', 'layer3.2.bn2.bias', 'layer3.2.bn2.running_mean', 'layer3.2.bn2.running_var', 'layer3.2.bn2.num_batches_tracked', 'layer3.2.conv3.weight', 'layer3.2.bn3.weight', 'layer3.2.bn3.bias', 'layer3.2.bn3.running_mean', 'layer3.2.bn3.running_var', 'layer3.2.bn3.num_batches_tracked', 'layer3.3.conv1.weight', 'layer3.3.bn1.weight', 'layer3.3.bn1.bias', 'layer3.3.bn1.running_mean', 'layer3.3.bn1.running_var', 'layer3.3.bn1.num_batches_tracked', 'layer3.3.conv2.weight', 'layer3.3.bn2.weight', 'layer3.3.bn2.bias', 'layer3.3.bn2.running_mean', 'layer3.3.bn2.running_var', 'layer3.3.bn2.num_batches_tracked', 'layer3.3.conv3.weight', 'layer3.3.bn3.weight', 'layer3.3.bn3.bias', 'layer3.3.bn3.running_mean', 'layer3.3.bn3.running_var', 'layer3.3.bn3.num_batches_tracked', 'layer3.4.conv1.weight', 'layer3.4.bn1.weight', 'layer3.4.bn1.bias', 'layer3.4.bn1.running_mean', 'layer3.4.bn1.running_var', 'layer3.4.bn1.num_batches_tracked', 'layer3.4.conv2.weight', 'layer3.4.bn2.weight', 'layer3.4.bn2.bias', 'layer3.4.bn2.running_mean', 'layer3.4.bn2.running_var', 'layer3.4.bn2.num_batches_tracked', 'layer3.4.conv3.weight', 'layer3.4.bn3.weight', 'layer3.4.bn3.bias', 'layer3.4.bn3.running_mean', 'layer3.4.bn3.running_var', 'layer3.4.bn3.num_batches_tracked', 'layer3.5.conv1.weight', 'layer3.5.bn1.weight', 'layer3.5.bn1.bias', 'layer3.5.bn1.running_mean', 'layer3.5.bn1.running_var', 'layer3.5.bn1.num_batches_tracked', 'layer3.5.conv2.weight', 'layer3.5.bn2.weight', 'layer3.5.bn2.bias', 'layer3.5.bn2.running_mean', 'layer3.5.bn2.running_var', 'layer3.5.bn2.num_batches_tracked', 'layer3.5.conv3.weight', 'layer3.5.bn3.weight', 'layer3.5.bn3.bias', 'layer3.5.bn3.running_mean', 'layer3.5.bn3.running_var', 'layer3.5.bn3.num_batches_tracked', 'layer4.0.conv1.weight', 'layer4.0.bn1.weight', 'layer4.0.bn1.bias', 'layer4.0.bn1.running_mean', 'layer4.0.bn1.running_var', 'layer4.0.bn1.num_batches_tracked', 'layer4.0.conv2.weight', 'layer4.0.bn2.weight', 'layer4.0.bn2.bias', 'layer4.0.bn2.running_mean', 'layer4.0.bn2.running_var', 'layer4.0.bn2.num_batches_tracked', 'layer4.0.conv3.weight', 'layer4.0.bn3.weight', 'layer4.0.bn3.bias', 'layer4.0.bn3.running_mean', 'layer4.0.bn3.running_var', 'layer4.0.bn3.num_batches_tracked', 'layer4.0.downsample.0.weight', 'layer4.0.downsample.1.weight', 'layer4.0.downsample.1.bias', 'layer4.0.downsample.1.running_mean', 'layer4.0.downsample.1.running_var', 'layer4.0.downsample.1.num_batches_tracked', 'layer4.1.conv1.weight', 'layer4.1.bn1.weight', 'layer4.1.bn1.bias', 'layer4.1.bn1.running_mean', 'layer4.1.bn1.running_var', 'layer4.1.bn1.num_batches_tracked', 'layer4.1.conv2.weight', 'layer4.1.bn2.weight', 'layer4.1.bn2.bias', 'layer4.1.bn2.running_mean', 'layer4.1.bn2.running_var', 'layer4.1.bn2.num_batches_tracked', 'layer4.1.conv3.weight', 'layer4.1.bn3.weight', 'layer4.1.bn3.bias', 'layer4.1.bn3.running_mean', 'layer4.1.bn3.running_var', 'layer4.1.bn3.num_batches_tracked', 'layer4.2.conv1.weight', 'layer4.2.bn1.weight', 'layer4.2.bn1.bias', 'layer4.2.bn1.running_mean', 'layer4.2.bn1.running_var', 'layer4.2.bn1.num_batches_tracked', 'layer4.2.conv2.weight', 'layer4.2.bn2.weight', 'layer4.2.bn2.bias', 'layer4.2.bn2.running_mean', 'layer4.2.bn2.running_var', 'layer4.2.bn2.num_batches_tracked', 'layer4.2.conv3.weight', 'layer4.2.bn3.weight', 'layer4.2.bn3.bias', 'layer4.2.bn3.running_mean', 'layer4.2.bn3.running_var', 'layer4.2.bn3.num_batches_tracked', 'attention0.fc.0.weight', 'attention0.fc.2.weight', 'attention1.fc.0.weight', 'attention1.fc.2.weight', 'attention2.fc.0.weight', 'attention2.fc.2.weight', 'attention3.fc.0.weight', 'attention3.fc.2.weight', 'module.head.0.weight', 'module.head.0.bias', 'module.head.2.weight', 'module.head.2.bias'])
+_IncompatibleKeys(missing_keys=['fc.weight', 'fc.bias'], unexpected_keys=['module.head.0.weight', 'module.head.0.bias', 'module.head.2.weight', 'module.head.2.bias'])
+[epoch 0] mean loss 0.883: 100%|██████████████| 159/159 [00:11<00:00, 13.71it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.80it/s]
+[epoch 0]  train_accuracy: 0.6603 val_accuracy: 0.8384
+[epoch 1] mean loss 0.525: 100%|██████████████| 159/159 [00:10<00:00, 15.31it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.98it/s]
+[epoch 1]  train_accuracy: 0.8066 val_accuracy: 0.8954
+[epoch 2] mean loss 0.42: 100%|███████████████| 159/159 [00:10<00:00, 15.21it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 22.31it/s]
+[epoch 2]  train_accuracy: 0.8482 val_accuracy: 0.9176
+[epoch 3] mean loss 0.355: 100%|██████████████| 159/159 [00:11<00:00, 13.85it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 19.91it/s]
+[epoch 3]  train_accuracy: 0.8711 val_accuracy: 0.9239
+[epoch 4] mean loss 0.3: 100%|████████████████| 159/159 [00:11<00:00, 14.28it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 22.19it/s]
+[epoch 4]  train_accuracy: 0.8909 val_accuracy: 0.9208
+[epoch 5] mean loss 0.277: 100%|██████████████| 159/159 [00:10<00:00, 14.72it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.55it/s]
+[epoch 5]  train_accuracy: 0.9043 val_accuracy: 0.9525
+[epoch 6] mean loss 0.249: 100%|██████████████| 159/159 [00:11<00:00, 14.14it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.09it/s]
+[epoch 6]  train_accuracy: 0.9138 val_accuracy: 0.9525
+[epoch 7] mean loss 0.25: 100%|███████████████| 159/159 [00:11<00:00, 14.37it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.38it/s]
+[epoch 7]  train_accuracy: 0.913 val_accuracy: 0.9366
+[epoch 8] mean loss 0.217: 100%|██████████████| 159/159 [00:11<00:00, 13.61it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.98it/s]
+[epoch 8]  train_accuracy: 0.9265 val_accuracy: 0.9477
+[epoch 9] mean loss 0.221: 100%|██████████████| 159/159 [00:11<00:00, 14.32it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.77it/s]
+[epoch 9]  train_accuracy: 0.9213 val_accuracy: 0.9477
+[epoch 10] mean loss 0.179: 100%|█████████████| 159/159 [00:10<00:00, 15.07it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.49it/s]
+[epoch 10]  train_accuracy: 0.9375 val_accuracy: 0.962
+[epoch 11] mean loss 0.18: 100%|██████████████| 159/159 [00:10<00:00, 14.47it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.17it/s]
+[epoch 11]  train_accuracy: 0.9379 val_accuracy: 0.9604
+[epoch 12] mean loss 0.175: 100%|█████████████| 159/159 [00:11<00:00, 13.86it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.21it/s]
+[epoch 12]  train_accuracy: 0.9379 val_accuracy: 0.9572
+[epoch 13] mean loss 0.18: 100%|██████████████| 159/159 [00:11<00:00, 14.01it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.80it/s]
+[epoch 13]  train_accuracy: 0.9355 val_accuracy: 0.9477
+[epoch 14] mean loss 0.164: 100%|█████████████| 159/159 [00:10<00:00, 15.36it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.20it/s]
+[epoch 14]  train_accuracy: 0.9458 val_accuracy: 0.9429
+[epoch 15] mean loss 0.176: 100%|█████████████| 159/159 [00:10<00:00, 15.05it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.27it/s]
+[epoch 15]  train_accuracy: 0.9458 val_accuracy: 0.9588
+[epoch 16] mean loss 0.138: 100%|█████████████| 159/159 [00:11<00:00, 13.90it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.74it/s]
+[epoch 16]  train_accuracy: 0.951 val_accuracy: 0.9635
+[epoch 17] mean loss 0.142: 100%|█████████████| 159/159 [00:10<00:00, 14.85it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.20it/s]
+[epoch 17]  train_accuracy: 0.9506 val_accuracy: 0.9445
+[epoch 18] mean loss 0.164: 100%|█████████████| 159/159 [00:10<00:00, 15.22it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.69it/s]
+[epoch 18]  train_accuracy: 0.9395 val_accuracy: 0.954
+[epoch 19] mean loss 0.131: 100%|█████████████| 159/159 [00:10<00:00, 14.92it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.06it/s]
+[epoch 19]  train_accuracy: 0.9581 val_accuracy: 0.9588
+[epoch 20] mean loss 0.148: 100%|█████████████| 159/159 [00:10<00:00, 14.64it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.77it/s]
+[epoch 20]  train_accuracy: 0.9565 val_accuracy: 0.9762
+[epoch 21] mean loss 0.135: 100%|█████████████| 159/159 [00:11<00:00, 13.91it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 19.88it/s]
+[epoch 21]  train_accuracy: 0.9502 val_accuracy: 0.962
+[epoch 22] mean loss 0.128: 100%|█████████████| 159/159 [00:09<00:00, 16.33it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.78it/s]
+[epoch 22]  train_accuracy: 0.9581 val_accuracy: 0.9588
+[epoch 23] mean loss 0.143: 100%|█████████████| 159/159 [00:10<00:00, 14.62it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.77it/s]
+[epoch 23]  train_accuracy: 0.949 val_accuracy: 0.9667
+[epoch 24] mean loss 0.107: 100%|█████████████| 159/159 [00:11<00:00, 13.75it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.72it/s]
+[epoch 24]  train_accuracy: 0.966 val_accuracy: 0.9604
+[epoch 25] mean loss 0.123: 100%|█████████████| 159/159 [00:11<00:00, 14.12it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.62it/s]
+[epoch 25]  train_accuracy: 0.9557 val_accuracy: 0.9635
+[epoch 26] mean loss 0.125: 100%|█████████████| 159/159 [00:10<00:00, 15.39it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.23it/s]
+[epoch 26]  train_accuracy: 0.9601 val_accuracy: 0.962
+[epoch 27] mean loss 0.107: 100%|█████████████| 159/159 [00:10<00:00, 14.71it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.49it/s]
+[epoch 27]  train_accuracy: 0.9597 val_accuracy: 0.9715
+[epoch 28] mean loss 0.115: 100%|█████████████| 159/159 [00:10<00:00, 14.70it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.33it/s]
+[epoch 28]  train_accuracy: 0.9581 val_accuracy: 0.9683
+[epoch 29] mean loss 0.12: 100%|██████████████| 159/159 [00:10<00:00, 14.96it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.09it/s]
+[epoch 29]  train_accuracy: 0.966 val_accuracy: 0.9715
+[epoch 30] mean loss 0.112: 100%|█████████████| 159/159 [00:11<00:00, 14.33it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.05it/s]
+[epoch 30]  train_accuracy: 0.966 val_accuracy: 0.9525
+[epoch 31] mean loss 0.115: 100%|█████████████| 159/159 [00:10<00:00, 15.05it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.83it/s]
+[epoch 31]  train_accuracy: 0.9609 val_accuracy: 0.9731
+[epoch 32] mean loss 0.093: 100%|█████████████| 159/159 [00:11<00:00, 14.06it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.22it/s]
+[epoch 32]  train_accuracy: 0.968 val_accuracy: 0.9635
+[epoch 33] mean loss 0.103: 100%|█████████████| 159/159 [00:11<00:00, 13.50it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.38it/s]
+[epoch 33]  train_accuracy: 0.9644 val_accuracy: 0.9778
+[epoch 34] mean loss 0.103: 100%|█████████████| 159/159 [00:10<00:00, 15.13it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.25it/s]
+[epoch 34]  train_accuracy: 0.9668 val_accuracy: 0.9588
+[epoch 35] mean loss 0.094: 100%|█████████████| 159/159 [00:11<00:00, 13.87it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.72it/s]
+[epoch 35]  train_accuracy: 0.9668 val_accuracy: 0.9667
+[epoch 36] mean loss 0.093: 100%|█████████████| 159/159 [00:10<00:00, 14.62it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.39it/s]
+[epoch 36]  train_accuracy: 0.9711 val_accuracy: 0.9699
+[epoch 37] mean loss 0.095: 100%|█████████████| 159/159 [00:10<00:00, 15.45it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.47it/s]
+[epoch 37]  train_accuracy: 0.9696 val_accuracy: 0.9604
+[epoch 38] mean loss 0.086: 100%|█████████████| 159/159 [00:11<00:00, 13.52it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.91it/s]
+[epoch 38]  train_accuracy: 0.9696 val_accuracy: 0.9731
+[epoch 39] mean loss 0.085: 100%|█████████████| 159/159 [00:11<00:00, 14.17it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 22.53it/s]
+[epoch 39]  train_accuracy: 0.9692 val_accuracy: 0.9667
+[epoch 40] mean loss 0.081: 100%|█████████████| 159/159 [00:11<00:00, 14.06it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.54it/s]
+[epoch 40]  train_accuracy: 0.9743 val_accuracy: 0.9683
+[epoch 41] mean loss 0.097: 100%|█████████████| 159/159 [00:11<00:00, 14.20it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.82it/s]
+[epoch 41]  train_accuracy: 0.9668 val_accuracy: 0.9715
+[epoch 42] mean loss 0.099: 100%|█████████████| 159/159 [00:10<00:00, 15.18it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.68it/s]
+[epoch 42]  train_accuracy: 0.9751 val_accuracy: 0.9699
+[epoch 43] mean loss 0.091: 100%|█████████████| 159/159 [00:11<00:00, 13.45it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.29it/s]
+[epoch 43]  train_accuracy: 0.9692 val_accuracy: 0.9667
+[epoch 44] mean loss 0.074: 100%|█████████████| 159/159 [00:10<00:00, 15.38it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.27it/s]
+[epoch 44]  train_accuracy: 0.9747 val_accuracy: 0.9699
+[epoch 45] mean loss 0.076: 100%|█████████████| 159/159 [00:10<00:00, 14.94it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 22.12it/s]
+[epoch 45]  train_accuracy: 0.9747 val_accuracy: 0.9699
+[epoch 46] mean loss 0.086: 100%|█████████████| 159/159 [00:10<00:00, 15.78it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 22.09it/s]
+[epoch 46]  train_accuracy: 0.9751 val_accuracy: 0.9667
+[epoch 47] mean loss 0.07: 100%|██████████████| 159/159 [00:11<00:00, 14.09it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.74it/s]
+[epoch 47]  train_accuracy: 0.9779 val_accuracy: 0.9731
+[epoch 48] mean loss 0.086: 100%|█████████████| 159/159 [00:11<00:00, 14.14it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.65it/s]
+[epoch 48]  train_accuracy: 0.9715 val_accuracy: 0.9667
+[epoch 49] mean loss 0.089: 100%|█████████████| 159/159 [00:10<00:00, 15.22it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.58it/s]
+[epoch 49]  train_accuracy: 0.9703 val_accuracy: 0.9746
+[epoch 50] mean loss 0.073: 100%|█████████████| 159/159 [00:10<00:00, 14.84it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.72it/s]
+[epoch 50]  train_accuracy: 0.9767 val_accuracy: 0.9651
+[epoch 51] mean loss 0.082: 100%|█████████████| 159/159 [00:12<00:00, 13.04it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.34it/s]
+[epoch 51]  train_accuracy: 0.9727 val_accuracy: 0.9683
+[epoch 52] mean loss 0.063: 100%|█████████████| 159/159 [00:10<00:00, 14.63it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.08it/s]
+[epoch 52]  train_accuracy: 0.9806 val_accuracy: 0.9683
+[epoch 53] mean loss 0.079: 100%|█████████████| 159/159 [00:10<00:00, 14.97it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.80it/s]
+[epoch 53]  train_accuracy: 0.979 val_accuracy: 0.9683
+[epoch 54] mean loss 0.07: 100%|██████████████| 159/159 [00:11<00:00, 14.42it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.93it/s]
+[epoch 54]  train_accuracy: 0.9771 val_accuracy: 0.9651
+[epoch 55] mean loss 0.085: 100%|█████████████| 159/159 [00:10<00:00, 14.81it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.80it/s]
+[epoch 55]  train_accuracy: 0.9743 val_accuracy: 0.962
+[epoch 56] mean loss 0.063: 100%|█████████████| 159/159 [00:11<00:00, 13.58it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.80it/s]
+[epoch 56]  train_accuracy: 0.9842 val_accuracy: 0.9715
+[epoch 57] mean loss 0.074: 100%|█████████████| 159/159 [00:11<00:00, 14.14it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.99it/s]
+[epoch 57]  train_accuracy: 0.9743 val_accuracy: 0.9651
+[epoch 58] mean loss 0.081: 100%|█████████████| 159/159 [00:09<00:00, 16.00it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.32it/s]
+[epoch 58]  train_accuracy: 0.9794 val_accuracy: 0.9731
+[epoch 59] mean loss 0.059: 100%|█████████████| 159/159 [00:11<00:00, 13.83it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.20it/s]
+[epoch 59]  train_accuracy: 0.9814 val_accuracy: 0.9715
+[epoch 60] mean loss 0.074: 100%|█████████████| 159/159 [00:11<00:00, 13.76it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.08it/s]
+[epoch 60]  train_accuracy: 0.9763 val_accuracy: 0.9762
+[epoch 61] mean loss 0.076: 100%|█████████████| 159/159 [00:12<00:00, 13.12it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 19.08it/s]
+[epoch 61]  train_accuracy: 0.9751 val_accuracy: 0.9762
+[epoch 62] mean loss 0.064: 100%|█████████████| 159/159 [00:11<00:00, 14.42it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.85it/s]
+[epoch 62]  train_accuracy: 0.9775 val_accuracy: 0.9715
+[epoch 63] mean loss 0.068: 100%|█████████████| 159/159 [00:11<00:00, 14.39it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.30it/s]
+[epoch 63]  train_accuracy: 0.9838 val_accuracy: 0.9731
+[epoch 64] mean loss 0.067: 100%|█████████████| 159/159 [00:11<00:00, 13.77it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 19.79it/s]
+[epoch 64]  train_accuracy: 0.9806 val_accuracy: 0.9588
+[epoch 65] mean loss 0.078: 100%|█████████████| 159/159 [00:10<00:00, 15.82it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.43it/s]
+[epoch 65]  train_accuracy: 0.9783 val_accuracy: 0.9651
+[epoch 66] mean loss 0.044: 100%|█████████████| 159/159 [00:12<00:00, 12.92it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.79it/s]
+[epoch 66]  train_accuracy: 0.987 val_accuracy: 0.9715
+[epoch 67] mean loss 0.064: 100%|█████████████| 159/159 [00:10<00:00, 15.17it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.18it/s]
+[epoch 67]  train_accuracy: 0.9751 val_accuracy: 0.9699
+[epoch 68] mean loss 0.054: 100%|█████████████| 159/159 [00:10<00:00, 14.79it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.44it/s]
+[epoch 68]  train_accuracy: 0.9818 val_accuracy: 0.9651
+[epoch 69] mean loss 0.062: 100%|█████████████| 159/159 [00:11<00:00, 14.32it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.06it/s]
+[epoch 69]  train_accuracy: 0.9826 val_accuracy: 0.9683
+[epoch 70] mean loss 0.053: 100%|█████████████| 159/159 [00:11<00:00, 14.17it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 19.75it/s]
+[epoch 70]  train_accuracy: 0.9814 val_accuracy: 0.9731
+[epoch 71] mean loss 0.062: 100%|█████████████| 159/159 [00:10<00:00, 14.63it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.66it/s]
+[epoch 71]  train_accuracy: 0.9783 val_accuracy: 0.9715
+[epoch 72] mean loss 0.054: 100%|█████████████| 159/159 [00:11<00:00, 14.11it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 21.90it/s]
+[epoch 72]  train_accuracy: 0.9834 val_accuracy: 0.9683
+[epoch 73] mean loss 0.066: 100%|█████████████| 159/159 [00:10<00:00, 15.81it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 19.26it/s]
+[epoch 73]  train_accuracy: 0.9802 val_accuracy: 0.9715
+[epoch 74] mean loss 0.059: 100%|█████████████| 159/159 [00:16<00:00,  9.73it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 18.59it/s]
+[epoch 74]  train_accuracy: 0.983 val_accuracy: 0.9651
+[epoch 75] mean loss 0.054: 100%|█████████████| 159/159 [00:16<00:00,  9.76it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.82it/s]
+[epoch 75]  train_accuracy: 0.9842 val_accuracy: 0.9778
+[epoch 76] mean loss 0.049: 100%|█████████████| 159/159 [00:15<00:00, 10.36it/s]
+100%|███████████████████████████████████████████| 40/40 [00:01<00:00, 20.55it/s]
+[epoch 76]  train_accuracy: 0.9877 val_accuracy: 0.9778
+[epoch 77] mean loss 0.049: 100%|█████████████| 159/159 [00:15<00:00, 10.29it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 17.76it/s]
+[epoch 77]  train_accuracy: 0.9842 val_accuracy: 0.9778
+[epoch 78] mean loss 0.055: 100%|█████████████| 159/159 [00:15<00:00, 10.35it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 15.72it/s]
+[epoch 78]  train_accuracy: 0.9802 val_accuracy: 0.9794
+[epoch 79] mean loss 0.063: 100%|█████████████| 159/159 [00:14<00:00, 11.04it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 15.78it/s]
+[epoch 79]  train_accuracy: 0.983 val_accuracy: 0.9762
+[epoch 80] mean loss 0.06: 100%|██████████████| 159/159 [00:14<00:00, 11.04it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.15it/s]
+[epoch 80]  train_accuracy: 0.9783 val_accuracy: 0.9826
+[epoch 81] mean loss 0.047: 100%|█████████████| 159/159 [00:14<00:00, 11.16it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.09it/s]
+[epoch 81]  train_accuracy: 0.9877 val_accuracy: 0.9746
+[epoch 82] mean loss 0.056: 100%|█████████████| 159/159 [00:14<00:00, 10.99it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 15.94it/s]
+[epoch 82]  train_accuracy: 0.9838 val_accuracy: 0.9746
+[epoch 83] mean loss 0.059: 100%|█████████████| 159/159 [00:14<00:00, 10.76it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.22it/s]
+[epoch 83]  train_accuracy: 0.9798 val_accuracy: 0.9778
+[epoch 84] mean loss 0.053: 100%|█████████████| 159/159 [00:14<00:00, 11.09it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.00it/s]
+[epoch 84]  train_accuracy: 0.9858 val_accuracy: 0.9699
+[epoch 85] mean loss 0.057: 100%|█████████████| 159/159 [00:14<00:00, 10.86it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 15.98it/s]
+[epoch 85]  train_accuracy: 0.9846 val_accuracy: 0.9715
+[epoch 86] mean loss 0.056: 100%|█████████████| 159/159 [00:13<00:00, 11.63it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.39it/s]
+[epoch 86]  train_accuracy: 0.9901 val_accuracy: 0.9731
+[epoch 87] mean loss 0.042: 100%|█████████████| 159/159 [00:13<00:00, 11.53it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.36it/s]
+[epoch 87]  train_accuracy: 0.9854 val_accuracy: 0.9746
+[epoch 88] mean loss 0.047: 100%|█████████████| 159/159 [00:13<00:00, 11.42it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.20it/s]
+[epoch 88]  train_accuracy: 0.9862 val_accuracy: 0.9794
+[epoch 89] mean loss 0.051: 100%|█████████████| 159/159 [00:14<00:00, 11.35it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.31it/s]
+[epoch 89]  train_accuracy: 0.983 val_accuracy: 0.9778
+[epoch 90] mean loss 0.047: 100%|█████████████| 159/159 [00:13<00:00, 11.48it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.37it/s]
+[epoch 90]  train_accuracy: 0.9854 val_accuracy: 0.9778
+[epoch 91] mean loss 0.047: 100%|█████████████| 159/159 [00:13<00:00, 11.79it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.03it/s]
+[epoch 91]  train_accuracy: 0.9846 val_accuracy: 0.9731
+[epoch 92] mean loss 0.05: 100%|██████████████| 159/159 [00:13<00:00, 12.01it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.37it/s]
+[epoch 92]  train_accuracy: 0.9862 val_accuracy: 0.9778
+[epoch 93] mean loss 0.054: 100%|█████████████| 159/159 [00:14<00:00, 10.70it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 15.94it/s]
+[epoch 93]  train_accuracy: 0.9846 val_accuracy: 0.9715
+[epoch 94] mean loss 0.053: 100%|█████████████| 159/159 [00:13<00:00, 11.94it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.25it/s]
+[epoch 94]  train_accuracy: 0.9834 val_accuracy: 0.9762
+[epoch 95] mean loss 0.051: 100%|█████████████| 159/159 [00:13<00:00, 11.53it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.33it/s]
+[epoch 95]  train_accuracy: 0.985 val_accuracy: 0.9746
+[epoch 96] mean loss 0.046: 100%|█████████████| 159/159 [00:14<00:00, 10.80it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 15.72it/s]
+[epoch 96]  train_accuracy: 0.9854 val_accuracy: 0.9746
+[epoch 97] mean loss 0.05: 100%|██████████████| 159/159 [00:13<00:00, 11.74it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.00it/s]
+[epoch 97]  train_accuracy: 0.985 val_accuracy: 0.981
+[epoch 98] mean loss 0.05: 100%|██████████████| 159/159 [00:14<00:00, 10.97it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 16.19it/s]
+[epoch 98]  train_accuracy: 0.9854 val_accuracy: 0.9731
+[epoch 99] mean loss 0.047: 100%|█████████████| 159/159 [00:12<00:00, 12.26it/s]
+100%|███████████████████████████████████████████| 40/40 [00:02<00:00, 15.24it/s]
+[epoch 99]  train_accuracy: 0.9881 val_accuracy: 0.9826
+
+Process finished with exit code 0
