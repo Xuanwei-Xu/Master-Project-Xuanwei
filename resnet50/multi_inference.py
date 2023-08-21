@@ -8,7 +8,6 @@ from torchvision import transforms
 from model import resnet50
 
 
-# 此文件注释和参考inference.py文件
 
 def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -33,7 +32,7 @@ def main():
         img_list.append(img)
 
     # batch img
-    batch_img = torch.stack(img_list, dim=0)  # 将多个图片拼接成一个张量
+    batch_img = torch.stack(img_list, dim=0) 
 
     # read class_indict
     json_path = './class_indices.json'
