@@ -17,7 +17,7 @@ def main():
     model = resnet50(num_classes=4)  # Instantiate the final optimized model
 
     # load model weights
-    model_weight_path = "./resnet50.pth"  # 模型权重路径
+    model_weight_path = "./resnet50.pth" 
 
     model.load_state_dict(torch.load(model_weight_path, map_location="cpu"))
     model.eval()
